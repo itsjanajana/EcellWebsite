@@ -1,0 +1,106 @@
+.team-tier { padding-bottom: 1rem; }
+
+.team-tier__title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.team-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.team-grid--sm { grid-template-columns: repeat(3, 1fr); }
+.team-grid--md { grid-template-columns: repeat(4, 1fr); }  /* changed to show more */
+.team-grid--lg { grid-template-columns: repeat(4, 1fr); }
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1.75rem 1.25rem;
+}
+
+.member-card__avatar {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.member-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.member-card__name {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fg);
+  transition: color var(--transition);
+}
+
+.member-card__role {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.member-card__branch {
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.04em;
+}
+
+.member-card__socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.member-card__socials a {
+  display: grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.member-card__socials a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .team-grid--sm { grid-template-columns: repeat(2, 1fr); }
+  .team-grid--md { grid-template-columns: repeat(2, 1fr); }
+  .team-grid--lg { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .team-grid--sm,
+  .team-grid--md,
+  .team-grid--lg { grid-template-columns: 1fr 1fr; }
+}

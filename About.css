@@ -1,0 +1,132 @@
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.value-icon {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  background: rgba(230,51,41,0.1);
+  color: var(--accent);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+  transition: color var(--transition);
+}
+
+.value-desc {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  transition: color var(--transition);
+}
+
+.about-story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-story__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-eyebrow {
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.1em;
+}
+
+.about-story__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--fg);
+  transition: color var(--transition);
+}
+
+.about-story__text p {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  line-height: 1.8;
+  transition: color var(--transition);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+
+.btn-accent:hover { opacity: 0.85; }
+
+/* TIMELINE */
+.about-story__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 3rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color var(--transition);
+}
+
+.timeline-item--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-year {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 0.2rem;
+}
+
+.timeline-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 0.35rem;
+  transition: color var(--transition);
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+  transition: color var(--transition);
+}
+
+@media (max-width: 768px) {
+  .mvv-grid { grid-template-columns: 1fr; }
+  .about-story__inner { grid-template-columns: 1fr; gap: 3rem; }
+}
